@@ -1,0 +1,225 @@
+/* ეს არის ყველაზე გავრცელებული "reset" სტილი და:
+უზრუნველყოფს ყველა ელემენტის ნულოვან საწყის მდგომარეობას;
+გვაძლევს ზუსტ კონტროლს layout-ზე;
+თავიდან გვარიდებს ბრაუზერებს შორის სტილებში სხვაობას;
+layout უფრო პროგნოზირებადი და სტაბილურია.  */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* რა არის Box Model ვებ დეველოპმენტში?
+
+Box Model წარმოადგენს ვებ დეველოპმენტის ერთ-ერთ ძირითად კონცეფციას, რომლის თანახმად, ყოველი HTML ელემენტი აღიქმება როგორც მართკუთხა ყუთი.
+
+ეს ყუთი განსაზღვრავს, როგორ განლაგდება, როგორ განისაზღვრება მისი ზომა და როგორ იმოქმედებს სხვა ელემენტებთან ურთიერთობისას ვებსაიტზე.
+ 
+
+box model საშუალებას გვაძლევს :
+
+1.ზუსტად განვსაზღვროთ ელემენტის ზომა.
+2.ელემენტების ზუსტად და ეფექტურად განლაგება
+3.ვიზუალურად სწორად და ზუსტად დავალაგოთ ელემენტები ერთმანეთისგან.
+4.ავიცილოთ layout-ის პრობლემები დიზაინში.
+
+
+როგორც ზემოთ ავღნიშნე css-ში box model-ი არის მოდელი, რომლის მიხედვითაც html ელემენტი წარმოდგენილია, როგორც ყუთი.
+
+ეს ყუთი შედგება ოთხი ნაწილისგან:
+
+1.Content – ელემენტის შიგთავსი (მაგ. ტექსტი, სურათი, ღილაკი და სხვ.).
+2.Padding – შიდა სივრცე, რომელიც არის content-სა და საზღვარს (border) შორის.
+3.Border – საზღვარი, რომელიც შემოფარგლავს ელემენტს.
+4.Margin – გარე სივრცე ელემენტსა და მის მეზობელ ელემენტებს შორის.
+
+Box Model-ის მიზანია ზუსტად განვსაზღვროთ ელემენტის ზომა და დაშორება სხვა ელემენტებთან. */
+
+:root {
+  --bg-color: #000000;
+  --main-color: #ffffff;
+  --secondary-color: #ff0000;
+}
+.mainTitle {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.imgContainer {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.imgContainertwo {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.firstBox {
+  background-color: var(--bg-color);
+  color: var(--main-color);
+  width: 400px;
+  height: 400px;
+  margin: 50px;
+  border-radius: 40px;
+}
+.firstBox h1 {
+  padding: 350px 0px 0px 250px;
+}
+
+.secondBox {
+  width: 400px;
+  height: 400px;
+  margin: 200px 0px 0px 50px;
+  border: 5px solid var(--secondary-color);
+  background-color: var(--bg-color);
+  color: var(--main-color);
+}
+
+.navContainer {
+  width: 100%;
+  height: 400px;
+  background-color: var(--bg-color);
+  margin-top: 50px;
+  color: var(--main-color);
+}
+.navContainer h1 {
+  display: flex;
+  justify-content: center;
+  padding: 25px 0px 25px 0px;
+}
+.navContainer ul {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding-left: 20px;
+}
+/* 
+Box Model-ის სწორი გამოყენება არამხოლოდ დიზაინის, არამედ რეზპონსივისათვის და კოდის შენახვისთვისაც მნიშვნელოვანია. ნებისმიერი თანამედროვე ვებდეველოპერი უნდა ფლობდეს ამ კონცეფციას ზედმიწევნით. */
